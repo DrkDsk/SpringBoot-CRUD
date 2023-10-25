@@ -2,6 +2,7 @@ package com.example.crud_api.services;
 
 import com.example.crud_api.models.UserModel;
 import com.example.crud_api.repositories.IUserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -27,6 +28,7 @@ public class UserService {
         return userRepository.findById(id);
     }
 
+    @Transactional
     public UserModel updateById(UserModel request, Long id){
         UserModel user = userRepository.findById(id).get();
 

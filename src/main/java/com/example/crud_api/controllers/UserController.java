@@ -3,7 +3,6 @@ package com.example.crud_api.controllers;
 import com.example.crud_api.models.UserModel;
 import com.example.crud_api.services.UserService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +24,7 @@ public class UserController {
     }
 
     @PostMapping
-    public UserModel saveUser(@RequestBody UserModel user){
+    public UserModel saveUser(@RequestBody UserModel user) {
         return userService.save(user);
     }
 
